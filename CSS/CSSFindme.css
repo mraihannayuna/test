@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #5cb85f;
+  --color-lightblue: #359fd0;
+  --color-bg1: #000000;
+  --color-bg2: #19557a;
+  --transition: all 400ms ease;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  height: 100vh;
+  background: var(--color-bg1);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  color: black;
+}
+
+.h2 {
+  word-wrap: normal;
+  line-height: 1.5rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ========== main css ============= */
+
+/* navbar */
+
+.toggle {
+  display: none;
+  margin: 0px 20px;
+}
+
+navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-lightblue);
+  padding: 10px 0;
+}
+
+.navbar-item {
+  margin: 0px 20px;
+}
+
+/* ! =================== MODAL CSS =================== */
+
+button#myBtn {
+  padding: 14px;
+  border-radius: 10px;
+  transform: rotate(6deg);
+  transition: var(--transition);
+  background-color: black;
+  animation: myOn 1.5s linear infinite;
+  font-weight: 1000;
+  font-size: 20px;
+}
+
+@keyframes myOn {
+  50% {
+    color: white;
+    font-weight: 1000;
+  }
+}
+
+button#myBtn:hover {
+  transition: var(--transition);
+  transform: rotate(0deg);
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 1000;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border: solid 10px #dda1dd;
+}
+
+.modal-header h2 {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: rgb(0, 0, 0);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 4, 4);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: plum;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  border: solid 2px black;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: plum;
+  color: white;
+}
+
+/* ? ================================ Modal Form CSS ========================= */
+
+/* Full-width input fields */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+.form-a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/* ! =================== END MODAL CSS =================== */
+
+.navbar-link {
+  font-weight: bolder;
+  margin-right: auto;
+  font-size: large;
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10%;
+}
+
+.navbar-link:hover {
+  color: white;
+  background: var(--color-primary);
+  border: solid 1px var(--color-primary);
+}
+
+.navbar-button {
+  border: 1px solid transparent;
+  display: inline-block;
+  background: var(--color-lightblue);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.navbar-button {
+  border: 1px solid transparent;
+  color: black;
+  animation: myOn 1.5s infinite;
+  display: inline-block;
+  background: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.8rem;
+  font-size: large;
+  transition: var(--transition);
+  transform: rotate(8deg);
+}
+
+.navbar-button:hover {
+  background: var(--color-primary);
+  transform: rotate(0deg);
+  color: white;
+  transition: var(--transition);
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 1000;
+  margin-left: 50px;
+  margin-right: auto;
+}
+
+.logo-tex {
+  color: rgb(222, 169, 35);
+  transition: var(--transition);
+  background-color: black;
+  border-radius: 20px;
+  animation: myTx 1s linear infinite;
+}
+
+@keyframes myTx {
+  50% {
+    color: rgb(233, 70, 70);
+    filter: brightness(1);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-button {
+    transform: rotate(8deg);
+    transition: var(--transition);
+  }
+
+  .navbar-button:hover {
+    transform: rotate(0deg);
+    transition: var(--transition);
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .toggle {
+    display: block;
+    width: 40px;
+  }
+
+  .navbar-item {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .navbar-button {
+    transform: rotate(0deg);
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  button#myBtn {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .navbar-link .logo {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 20px;
+    margin-right: auto;
+  }
+
+  .navbar-link {
+    display: grid;
+    justify-items: center;
+  }
+
+  .toggle {
+    display: block;
+    width: 50px;
+    height: 60px;
+  }
+
+  .navbar-item {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin: 15px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .logo-tex {
+    color: rgb(222, 169, 35);
+    transition: var(--transition);
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .navbar-button {
+    transform: rotate(0deg);
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .navbar-Modal {
+    margin: 0 20px;
+    display: none;
+  }
+
+  button#myBtn {
+    transform: rotate(0deg);
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 80%;
+  }
+}
+
+/* =============== END NAVBAR =============== */
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+.mapouter {
+  left: 50%;
+  transform: translatex(-50%);
+  margin-top: 50px;
+  scale: 0.8;
+}
+
+.title-box {
+  padding: 20px;
+  margin-top: 200px;
+  text-align: center;
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+  background-color: var(--color-nice);
+  text-align: center;
+  height: 60px;
+  position: relative;
+  top: 350px;
+
+  background-color: var(--color-lightblue);
+}
+
+.footer-div p {
+  padding-top: 10px;
+}
+
+.all-ri {
+  text-align: center;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.RII {
+  color: rgb(247, 247, 247);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.spppan {
+  color: yellow;
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    background-color: var(--color-nice);
+    text-align: center;
+    height: 60px;
+    background-color: var(--color-lightblue);
+  }
+
+  .footer-div p {
+    padding-top: 10px;
+  }
+
+  .all-ri {
+    text-align: center;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+  }
+
+  .RII {
+    color: rgb(247, 247, 247);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .spppan {
+    color: yellow;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    background-color: var(--color-nice);
+    text-align: center;
+    height: 60px;
+    background-color: var(--color-lightblue);
+  }
+
+  .title-box {
+    width: 75%;
+    left: 13%;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .footer-div p {
+    padding-top: 10px;
+  }
+
+  .all-ri {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+  }
+
+  .RII {
+    color: rgb(247, 247, 247);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
+  .spppan {
+    color: yellow;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  footer {
+    background-color: var(--color-nice);
+    text-align: center;
+    height: 80px;
+    background-color: var(--color-lightblue);
+  }
+
+  .navbar-list {
+    padding: 15px;
+  }
+
+  .title-box {
+    width: 75%;
+    left: 10%;
+  }
+
+  .logo {
+    margin: 0 30px;
+  }
+
+  .toggle {
+    height: 55px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .footer-div p {
+    padding-top: 10px;
+  }
+
+  .all-ri {
+    text-align: center;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+  }
+
+  .RII {
+    color: rgb(247, 247, 247);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
+  .spppan {
+    color: yellow;
+  }
+}
+
+/* =============== END FOOTER ================= */
